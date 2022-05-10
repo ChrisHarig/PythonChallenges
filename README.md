@@ -5,5 +5,3 @@ I'll list the projects with their descriptions below.
   
 1. 
 
-## UPDATE
-
