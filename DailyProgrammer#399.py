@@ -30,10 +30,10 @@ print(letterSum("cab")) #prints out the output to check if the function works
 # My second solution involves using the ASCII Table of characters and a function that converts a character to it's numerical value. 
 # The table allows me to use the characters assigned values directly and not have to create my own dictionary.
 
-def letterSum2(phrase):
+def letterSum2(phrase): #letterSum function that can take in any string and return the sum of it's characters
     total = 0;
     for letter in phrase:
-        total += (ord(letter) - 96)
+        total += (ord(letter) - 96) #ord function converts to ASCII value 
     return total
 
-print(letterSum2("cab"))
+print(letterSum2("cab")) #prints out the output to check if the function works
