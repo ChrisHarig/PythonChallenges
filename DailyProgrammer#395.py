@@ -19,15 +19,20 @@ https://www.reddit.com/r/dailyprogrammer/comments/o4uyzl/20210621_challenge_395_
 # Initial Solution: Iterate through the array and keep a running total of the number of consectutive "1"'s. When a "0" is reached, append the current sum to the list 
 # and set the current sum back to 0.
 
-nonograminput = [0,1,0,1,1,1,0,1]
-listtotal = []
-currentsum = 0
-
 def nonogramrow(nonograminput):
-    for number in nonograminput:
-        if number == 1:
+    currentsum = 0
+    listtotal = []
+    for i in range(len(nonograminput)):
+        if nonograminput[i] == 1 and nonograminput[i + 1] == 1:
             currentsum += 1
-        else:
+        elif nonograminput[i] == 1 and nonograminput[i + 1] == 0:
+            currentsum += 1
             listtotal.append(currentsum)
-            currentsum = 0
-            
+        elif nonograminput[i] == 1 and  nonograminput[i + 1] == None: 
+            currentsum += 1
+            listtotal.append(currentsum)
+        elif nonograminput[i] == 0:
+            currentsum == 0
+    return listtotal        
+
+print(nonogramrow([1,0,1,1,1,1,0]))
