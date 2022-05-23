@@ -23,10 +23,10 @@ def nonogramrow(nonograminput):
     currentsum = 0
     listtotal = []
     for i in range(len(nonograminput)):
-        if nonograminput[i] == 1 and i == len(nonograminput) - 1:
-            currentsum += 1
+        if nonograminput[i] == 1 and i == len(nonograminput) - 1: #first case checks if the loop has reached the final value so no 'out of bounds' error occurs
+            currentsum += 1                                       #in later checks
             listtotal.append(currentsum)
-        elif nonograminput[i] == 1 and nonograminput[i + 1] == 0:
+        elif nonograminput[i] == 1 and nonograminput[i + 1] == 0: 
             currentsum += 1
             listtotal.append(currentsum)
         elif nonograminput[i] == 1 and  nonograminput[i + 1] == 1: 
@@ -34,7 +34,8 @@ def nonogramrow(nonograminput):
         elif nonograminput[i] == 0:
             currentsum = 0
         else:
-            print("Invalid nonogram input.")
+            return "Invalid nonogram input."
+            break
     return listtotal        
 
-print(nonogramrow([0,1,0,0,0,0,1,1,1,1,0,1,0]))
+print(nonogramrow([0,1,0,1,1,1,0,1]))
