@@ -2,31 +2,40 @@
 
 # Currently supports addition, subtraction, mulitplication, division or exponentiation of two values.
 
-print("Enter two values and the operation you would like to perform.")
-print("Operators: +, -, *, and ^")
+input1 = 1
+input2 = "op"
+input3 = 1
 
-input1 = float(input("Number: ")) #catch ValueError for non numerical inputs
-input2 = input("Operation: ")
-input3 = float(input("Number: ")) ##catch ValueError for non numerical inputs
+def menu(): 
+    print("Enter two values and the operation you would like to perform.")
+    print("Operators: +, -, *, and ^")
+    try:
+        input1 = float(input("Number: "))
+    except ValueError:  
+        print("Please enter valid numerical input.") 
+        return
+    input2 = input("Operation: ")
+    try:
+        input3 = float(input("Number: "))
+    except ValueError:  
+        print("Please enter a valid numerical input.")
+        return
+
+print(menu())
 
 def calculate(num1, operator, num2): 
-    if type(num1) and type(num2) == float: #should delete eventually, convenient for now.
-        float(num1)
-        float(num2)
-        if operator == "+":
-            answer1 = num1 + num2
-        elif operator == "-":
-            answer1 = num1 - num2
-        elif operator == "*":
-            answer1 = num1 * num2
-        elif operator == "/":
-            answer1 = num1 / num2
-        elif operator == "^":
-            answer1 = num1 ** num2
-        else:
-            answer1 = "Please enter a valid operator."
+    if operator == "+":
+        answer1 = num1 + num2
+    elif operator == "-":
+        answer1 = num1 - num2
+    elif operator == "*":
+        answer1 = num1 * num2
+    elif operator == "/":
+        answer1 = num1 / num2
+    elif operator == "^":
+        answer1 = num1 ** num2
     else:
-        answer1 = "Please enter valid numerical inputs."
+        answer1 = "Please enter a valid operator."
     return answer1
 
 print(calculate(input1, input2, input3))
